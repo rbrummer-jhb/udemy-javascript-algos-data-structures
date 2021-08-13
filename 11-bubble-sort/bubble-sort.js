@@ -4,22 +4,43 @@
 // * If arr[j] is greater than arr[j+1], swap those 2 values!
 // * Return the sorted array.
 
-const swap = (arr, index1, index2) => {
-    [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+const swap = (arr,index1,index2) => {
+    [arr[index1],arr[index2]] = [arr[index2],arr[index1]];
 }
 
-function bubbleSort(arr) {
-    let noSwaps = true;
-    for (let i = arr.length; i > 0; i--) {
-        for (let j = 0; j < i - 1; j++) {
-            if (arr[j] > arr[j+1]) {
-                swap(arr, j, j+1);
+const bubbleSort = (arr) => {
+    let noSwaps;
+    for(let i = arr.length; i > 0; i--){
+        for(let j = 0; j < i-1; j++){
+            console.log(arr,arr[j],arr[j+1]);
+            if(arr[j] > arr[j+1]){
+                swap(arr,j,j+1);
                 noSwaps = false;
             }
         }
-        if (noSwaps) break;
+        if(noSwaps) break;
     }
     return arr;
 }
 
-console.log(bubbleSort([5,4,3,2,1]));
+console.log(bubbleSort([5,4,3,2,1,6]));
+
+// const swap = (arr, index1, index2) => {
+//     [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+// }
+
+// function bubbleSort(arr) {
+//     let noSwaps = true;
+//     for (let i = arr.length; i > 0; i--) {
+//         for (let j = 0; j < i - 1; j++) {
+//             if (arr[j] > arr[j+1]) {
+//                 swap(arr, j, j+1);
+//                 noSwaps = false;
+//             }
+//         }
+//         if (noSwaps) break;
+//     }
+//     return arr;
+// }
+
+// console.log(bubbleSort([5,4,3,2,1]));
